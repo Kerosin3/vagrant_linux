@@ -1,0 +1,19 @@
+---
+- name: Sample playbook
+  hosts: test_host
+  gather_facts: true
+  become: true
+  vars:
+    test_version: 1
+    nginx_version: 1.19
+
+  tasks:
+  - name: crete file
+    ansible.builtin.file:
+      path: /etc/foo.conf
+      mode: '0644'
+      state: touch
+  - name: installing nginx
+    ansible.builtin.pacman:
+      name: nginx
+      state: present

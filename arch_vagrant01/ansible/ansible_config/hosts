@@ -1,0 +1,8 @@
+all:
+    children:
+        test_host:
+        
+test_host:
+    hosts:
+        test_ansible_client-01:
+            #ansible_host: 192.168.56.3
